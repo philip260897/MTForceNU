@@ -183,7 +183,12 @@ public class Main
 						try {
 							Sensors.initialize();
 							driver.initialize();
-							driver.setShutdownModeAll(LedDriver.kgsSHDM_NORM_UC_FEAT);
+							driver.setShutdownModeAll(LedDriver.kgsSHDM_NORM_RESET_FEAT);
+							
+							driver.setGlobalIntensityAll(0);
+							driver.setGlobalColor(LedColor.WHITE);
+							driver.setAllLedsOnAll(false);
+							//driver.setGlobalIntensityAll(15);
 							driver.setScanLimitAll(LedDriver.kgsSCAN_LIMIT_7);
 							enabled = true;
 							System.out.println("[Server] Initializing Sensors...");
